@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Users</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 20px;
+        }
+        h2 {
+            color: #333333;
+            margin-bottom: 5px;
+        }
+        .nav-link {
+            color: #0000ff;
+            text-decoration: underline;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+        }
+        th {
+            background-color: #28a745;
+            color: #ffffff;
+            text-align: left;
+            padding: 12px;
+            font-weight: bold;
+            font-size: 14px;
+            border: 1px solid #dddddd;
+        }
+        td {
+            padding: 12px;
+            border: 1px solid #dddddd;
+            font-size: 14px;
+            color: #333333;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Registered Users</h2>
+    <a href="/" class="nav-link">Register Another User</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Mobile</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>State</th>
+                <th>Skills</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.name }}</td>
+                <td>{{ user.age }}</td>
+                <td>{{ user.mobile }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.gender }}</td>
+                <td>{{ user.state }}</td>
+                <td>{{ user.skills }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
